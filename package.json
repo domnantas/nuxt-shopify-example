@@ -1,0 +1,27 @@
+{
+  "name": "nuxt-shop-example",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "Domantas Petrauskas <domantas@kemdu.lt>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "nuxt": "^1.0.0",
+    "shopify-buy": "^1.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
