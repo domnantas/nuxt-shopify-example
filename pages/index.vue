@@ -1,7 +1,6 @@
 <template>
   <main>
     <h1>{{ shop.name }}</h1>
-    <Products :client="client" :products="products" :addVariantToCart="addVariantToCart" />
     <button @click="addVariantToCart">Add test product</button>
   </main>
 </template>
@@ -9,12 +8,8 @@
 <script>
 import "isomorphic-fetch";
 import shopifyClient from "shopify-buy";
-import Products from "~/components/Products.vue";
 
 export default {
-  components: {
-    Products
-  },
   data() {
     return {
       client: {},
@@ -43,9 +38,16 @@ export default {
       ];
       const checkoutId = this.checkout.id;
 
+      console.log("this.client:");
       console.log(this.client);
+      console.log("this.client.checkout:");
       console.log(this.client.checkout);
-      console.log(this.client.checkout.addLineItems());
+      console.log(
+        "this.client.checkout.addLineItems(checkoutId, lineItemsToAdd):"
+      );
+      console.log(
+        this.client.checkout.addLineItems(checkoutId, lineItemsToAdd)
+      );
 
       return this.client.checkout
         .addLineItems(checkoutId, lineItemsToAdd)
