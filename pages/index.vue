@@ -2,33 +2,24 @@
   <main>
     <h1>{{ shop.name }}</h1>
     <button @click="addVariantToCart">Add test product</button>
+    <pre>{{ checkout.lineItems }}</pre>
   </main>
 </template>
 
 <script>
-import "isomorphic-fetch";
-import shopifyClient from "shopify-buy";
-
 export default {
   data() {
     return {
-      client: {},
       checkout: { lineItems: [] },
       products: [],
       shop: {}
     };
   },
-  async asyncData({ env }) {
-    const client = shopifyClient.buildClient({
-      storefrontAccessToken: env.shopifyAccessToken,
-      domain: env.shopifyDomain
-    });
-
+  async asyncData({ app }) {
     return {
-      client: client,
-      checkout: await client.checkout.create(),
-      products: await client.product.fetchAll(),
-      shop: await client.shop.fetchInfo()
+      checkout: await app.$shopifyClient.checkout.create(),
+      products: await app.$shopifyClient.product.fetchAll(),
+      shop: await app.$shopifyClient.shop.fetchInfo()
     };
   },
   methods: {
@@ -38,18 +29,7 @@ export default {
       ];
       const checkoutId = this.checkout.id;
 
-      console.log("this.client:");
-      console.log(this.client);
-      console.log("this.client.checkout:");
-      console.log(this.client.checkout);
-      console.log(
-        "this.client.checkout.addLineItems(checkoutId, lineItemsToAdd):"
-      );
-      console.log(
-        this.client.checkout.addLineItems(checkoutId, lineItemsToAdd)
-      );
-
-      return this.client.checkout
+      return this.$shopifyClient.checkout
         .addLineItems(checkoutId, lineItemsToAdd)
         .then(res => {
           this.checkout = res;

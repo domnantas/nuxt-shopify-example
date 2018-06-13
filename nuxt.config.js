@@ -32,8 +32,9 @@ module.exports = {
         });
       }
     },
-    vendor: ["isomorphic-fetch"]
+    vendor: ["isomorphic-fetch", "shopify-buy"]
   },
+  plugins: ["~/plugins/shopify"],
   env: {
     shopifyAccessToken: "dd4d4dc146542ba7763305d71d1b3d38",
     shopifyDomain: "graphql.myshopify.com"
