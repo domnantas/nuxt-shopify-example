@@ -2,9 +2,11 @@
 
 > Nuxt.js project
 
+Demo: [nuxt-shopify-example.netlify.com]()
+
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install # Or yarn install
 
