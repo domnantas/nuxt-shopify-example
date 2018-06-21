@@ -1,4 +1,4 @@
-# nuxt-shop-example
+# nuxt-shopify-example
 
 > Nuxt.js project
 

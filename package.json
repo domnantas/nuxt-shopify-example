@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-shop-example",
+  "name": "nuxt-shopify",
   "version": "1.0.0",
   "description": "Nuxt.js project",
   "author": "Domantas Petrauskas <domantas@kemdu.lt>",
@@ -10,18 +10,39 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "test": "ava --verbose",
+    "test:watch": "ava --watch --verbose"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "nuxt": "^1.0.0",
-    "shopify-buy": "^1.4.0"
+    "shopify-buy": "^1.4.0",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "@vue/test-utils": "^1.0.0-beta.18",
+    "ava": "^0.25.0",
+    "babel-eslint": "^8.2.3",
+    "browser-env": "^3.2.5",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "node-sass": "^4.9.0",
+    "prettier": "^1.13.5",
+    "require-extension-hooks": "^0.3.2",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^1.0.0",
+    "sass-loader": "^7.0.3"
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./test/_setup.js"
+    ]
   }
 }
