@@ -2,7 +2,7 @@
 
 > Nuxt.js project
 
-Demo: [nuxt-shopify-example.netlify.com]()
+Demo: [http://nuxt-shopify-example.netlify.com]()
 
 ## Build Setup
 
