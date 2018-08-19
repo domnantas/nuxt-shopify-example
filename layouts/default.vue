@@ -96,6 +96,8 @@ h2 {
   font-size: 1.2rem;
   padding: 10px 17px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 
   &:hover,
   &:focus {

@@ -16,10 +16,10 @@
     "test:watch": "ava --watch --verbose"
   },
   "dependencies": {
+    "cookie-universal-nuxt": "^2.0.5",
     "isomorphic-fetch": "^2.2.1",
     "nuxt": "^1.0.0",
-    "shopify-buy": "^1.4.0",
-    "vuex-persistedstate": "^2.5.4"
+    "shopify-buy": "^1.4.0"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.18",

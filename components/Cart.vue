@@ -24,7 +24,7 @@
           <span class="pricing">{{ $store.state.checkout.totalPrice }}</span>
         </div>
       </div>
-      <button class="checkout button" @click="openCheckout">Checkout</button>
+      <a :href="$store.state.checkout.webUrl" class="checkout button">Checkout</a>
     </footer>
   </aside>
 </template>
@@ -35,11 +35,6 @@ import LineItems from "~/components/LineItems";
 export default {
   components: {
     LineItems
-  },
-  methods: {
-    openCheckout: function() {
-      window.open(this.$store.state.checkout.webUrl);
-    }
   }
 };
 </script>
